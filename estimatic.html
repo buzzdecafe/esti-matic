@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Esti-matic!</title>
+<style>
+body {
+  text-align: center;
+}
+#estimate {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+#out {
+  border: 1px solid red;
+  font-size: 50px;
+  width: 50%;
+  height: 100px;
+  margin: auto;
+  padding-top: 25px;
+}
+</style>
+</head>
+<body>
+
+<button id="estimate">Esti-Matic!</button>
+<div id="out"></div>
+
+<div class="cluck">
+    <img src="chicken-ani.gif" />
+</div>
+
+<script>
+(function() {
+  var b = document.getElementById('estimate');
+  var out = document.getElementById('out');
+  b.addEventListener('click', function() {
+    out.innerHTML = '***';
+    var est = Math.random() * 5 + 1 >> 0;
+    if (est === 5) {
+      est = "Too big!";
+    }
+    if (est === 4) {
+      est += 1;
+    }
+    setTimeout(function() {
+      out.innerHTML = est;
+    }, 200);
+  });
+}());
+</script>
+</body>
+</html>
