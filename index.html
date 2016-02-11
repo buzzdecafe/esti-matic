@@ -33,17 +33,11 @@ body {
 (function() {
   var b = document.getElementById('estimate');
   var out = document.getElementById('out');
+  var valmap = {0: "1", 1: "2", 2: "3", 3: "5", 4: "Too big!"};
   b.addEventListener('click', function() {
     out.innerHTML = '***';
-    var est = Math.random() * 5 + 1 >> 0;
-    if (est === 5) {
-      est = "Too big!";
-    }
-    if (est === 4) {
-      est += 1;
-    }
     setTimeout(function() {
-      out.innerHTML = est;
+      out.innerHTML = valmap[Math.random() * 5];
     }, 200);
   });
 }());
