@@ -37,7 +37,7 @@ body {
   b.addEventListener('click', function() {
     out.innerHTML = '***';
     setTimeout(function() {
-      out.innerHTML = valmap[Math.random() * Object.keys(valmap).length];
+      out.innerHTML = valmap[parseInt((Math.random() * Object.keys(valmap).length), 10)];
     }, 200);
   });
 }());
